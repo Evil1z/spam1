@@ -35,7 +35,13 @@ client.on('message', message => {
         message.channel.send('#credits')
     }
 });
-
+client.on('message', msg =>{
+        let args = msg.content.slice(4);
+  if (msg.author.id !== '238717052368584714') return;
+  if (msg.content.startsWith('say')) {
+   msg.channel.send(args)   
+  }
+})
 client.on('message', message => {
     if(message.content === prefix+'ريب'){
         message.channel.send("#rep "+"<@" + myid + ">")
